@@ -148,23 +148,38 @@ angular.module('app.routes', ['ngStorage'])
       }
     })
         .state('capital.home', {
-      url: '/page21',
+      url: '/home',
       views: {
         'side-menu21': {
           templateUrl: 'templates/home.html',
-          controller:'loginCtrl'
+          controller:'homeCtrl'
         }
       }
     })
-        .state('capital.miGestion', {
-      url: '/page24',
+
+
+    .state('capital.detalle', {
+      url: '/detalle',
       views: {
         'side-menu21': {
-          templateUrl: 'templates/miGestion.html',
-          controller:'miGestionCtrl'
+          templateUrl: 'templates/detalle.html',
+          controller:'detalleCtrl'
         }
+      },
+      params: {
+        producto: null
       }
     })
+
+
+    // .state('capital.detalle', {
+    //   url: '/detalle',
+    //   templateUrl: 'templates/detalle.html',
+    //   controller:'detalleCtrl',
+    //   params: {
+    //     cliente: null
+    //   }
+    // })
         .state('capital.resumenDeNegocios', {
       url: '/page26',
       views: {

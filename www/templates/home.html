@@ -1,4 +1,4 @@
-<ion-view title="Registro de Citas" id="page21" style="">
+<ion-view title="Resultados" id="page21" style="">
 
 
 <div class="fixed44" ><a ui-sref="capital.vender()" style='background: #24949f;
@@ -32,111 +32,69 @@
 
 
   <ion-content padding="true" class="has-header">
- 
-
-<div  ng-repeat='p in productos'>
 
 
+<div class='pins'>
 
-		<div  class="row" ng-if="$even" >
+	<div class='pin' ng-repeat='p in productos' ui-sref="capital.detalle({producto:p})">
 
-			<div class="col col-50"> 
-
-
-					<img src="{{host}}{{productos[$index].photo[0].photo__photo}}" style="max-width: 100%;
+		<img src="{{host}}{{p.photo[0].photo__photo}}" style="max-width: 100%;
 					height: auto;">
-					<div class='productos' >
 
-					<div class="row">
-
-					<div class="col-60">
-
-					{{productos[$index].titulo}} 
-					</div>
-
-					<div class="col-40" style='text-align: right;
-					font-size: 30px;'>
-
-					<i class="icon ion-heart"></i>
-					</div>
-
-
-
-
-					</div>
-
-					<div class="row">
-
-					<div class="col-50">
-
-					{{productos[$index].precio}} 
-					</div>
-
-					<div class="col-50" style='text-align: right;'>
-
-					12 Km
-					</div>
-
-					</div>
-
-					</div>
+	<div style='border-bottom-style: none;
+    color: #1c3d42;
+    border: 1px solid #c4cbcc;
+    border-bottom: : 0px;
+    margin-top: -5px;
+    padding: 10px;
+    border-radius: 3px;'>
+		<div class='row' >
+			<div class='col-100'>
+			{{p.titulo}}
 			</div>
 
+		<!-- 	<div class='col-40' style='text-align: right;
+					font-size: 15px;'>
 
-			<div class="col col-50"> 
+
+			<span ng-if='p.moneda=="Soles"'>S/. </span>
+			<span ng-if='p.moneda=="Dolares"'>USD </span>
+			{{p.precio}}
+			
+			</div> -->
+		</div>
 
 
-					<img src="{{host}}{{productos[$index+1].photo[0].photo__photo}}" style="max-width: 100%;
-					height: auto;">
-					<div class='productos' >
+		<div class="row">
 
-					<div class="row">
+					<div class="col-80">
 
-					<div class="col-60">
-
-					{{productos[$index+1].titulo}} 
+					<span ng-if='p.moneda=="Soles"'>S/. </span>
+					<span ng-if='p.moneda=="Dolares"'>USD </span>
+					{{p.precio}}
 					</div>
 
-					<div class="col-40" style='text-align: right;
-					font-size: 30px;'>
+					<div class="col-20" style='text-align: right;
+					font-size: 30px; color:#244a50;'>
 
-					<i class="icon ion-heart"></i>
+					<i class="icon ion-ios-heart-outline"></i>
 					</div>
 
 
 
 
 					</div>
-
-					<div class="row">
-
-					<div class="col-50">
-
-					{{productos[$index+1].precio}} 
-					</div>
-
-					<div class="col-50" style='text-align: right;'>
-
-					12 Km
-					</div>
-
-					</div>
-
-					</div>
-			</div>
-
-
 
 		</div>
 
 
-		
+	</div>
 
-		
+</div>
 
 
 
- </div>
+
 
 
 
