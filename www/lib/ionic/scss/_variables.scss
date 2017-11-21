@@ -3,7 +3,7 @@
 // -------------------------------
 
 $light:                           #fff !default;
-$stable:                          #24949f !default;
+$stable:                          #3ec9ac !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #28f1e0 !default;
@@ -105,9 +105,9 @@ $button-light-active-border:      #ccc !default;
 
 $button-stable-bg:                $stable !default;
 $button-stable-text:              #444 !default;
-$button-stable-border:            #b2b2b2 !default;
-$button-stable-active-bg:         #e5e5e5 !default;
-$button-stable-active-border:     #a2a2a2 !default;
+$button-stable-border:            #fff !default;
+$button-stable-active-bg:         $stable !default;
+$button-stable-active-border:     $stable !default;
 
 $button-positive-bg:              $positive !default;
 $button-positive-text:            #fff !default;

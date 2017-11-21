@@ -113,6 +113,13 @@ angular.module('app.routes', ['ngStorage'])
       templateUrl: 'templates/alerta.html',
       controller:'loginCtrl'
     })
+
+           .state('departamentos', {
+      url: '/departamentos',
+      templateUrl: 'templates/departamentos.html',
+      controller:'homeCtrl'
+    })
+
         .state('capital.historial', {
       url: '/page19',
       views: {
@@ -198,6 +205,19 @@ angular.module('app.routes', ['ngStorage'])
         }
       }
     })
+
+         .state('filtros', {
+      url: '/filtros',
+      templateUrl: 'templates/filtros.html',
+      controller:'homeCtrl'
+    })
+
+             .state('distrito', {
+      url: '/distrito',
+      templateUrl: 'templates/distrito.html',
+      controller:'homeCtrl'
+    })
+
 
 
  

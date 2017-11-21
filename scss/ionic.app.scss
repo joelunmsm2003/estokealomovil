@@ -3,6 +3,61 @@ $primario: #28f1e0;
 $secundario: #1f395f;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "../www/lib/ionic/scss/ionic";
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+ 
+}
+
+.circle {
+
+
+    border: 1px solid $light;
+    width: 80px;
+    height: 80px;
+    border-radius: 1000px;
+    color: $light;  
+    margin: 40px 6px 12px 22px;
+
+
+}
+
+    .activado{
+
+    	background-color: $stable !important;
+    	color:#fff;
+
+    }
+
+
+.circle:hover {
+  background-color: #fff;
+  border-style: solid;
+  color:$stable;
+
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+
+  font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+
+
+
 .profile-menu {
 	img {
 		
