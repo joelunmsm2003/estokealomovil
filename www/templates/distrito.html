@@ -18,15 +18,20 @@
         <ion-list id="listaDePropuestas-list14">
 
 
-      <ion-item ng-repeat="n in distritos" class="item-icon-right" id="listaDePropuestas-list-item130" ui-sref="filtros()" style="">
-      
-        {{n.nombre}}
 
-        <i class="icon ion-chevron-right stable"></i>
-      </ion-item>
- 
+         <ion-radio ng-repeat="n in distritos" ng-model="choice" ng-click='seleccionadistrito(n)' ui-sref="filtros()">{{n.nombre}}</ion-radio>
+
+
+
     </ion-list>
+
+
+
+
   </ion-content>
+
+
+
 
  <div ng-include src="'templates/footer.html'"></div>
 

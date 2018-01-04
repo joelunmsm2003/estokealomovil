@@ -1,0 +1,182 @@
+
+
+
+
+<ion-view title="Mi Perfil" id="page21" style="" hide-nav-bar="false">
+
+  <ion-nav-buttons side="left" style=''>
+   
+     <button class = "button button-icon icon ion-navicon" ng-click = "toggleLeft()"></button>
+
+  </ion-nav-buttons>
+
+ 
+<!--   <ion-nav-bar class="bar-stable">
+     
+     <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons> 
+
+         <ion-nav-buttons side="right">
+        
+
+        <img src="img/filtro.png" alt="" class="src" style="max-width: 36px;
+    height: 25px;
+    margin-top: 5px;" ui-sref="filtros()" >
+        </ion-nav-buttons>
+    </ion-nav-bar> -->
+
+
+ <div class="fixed44" ><a ui-sref="capital.vender()" style='background: #3ec9ac;
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 2px;
+    color: #fff;
+    text-decoration: none;' > <i class="fa fa-camera" aria-hidden="true"></i> Vender</a></div>
+
+
+<div class = "tabs tabs-icon-only">
+
+
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon ion-social-dropbox" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon ion-ios-keypad" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon ion-heart" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon ion-android-textsms" style='color:#fff;'></i>
+   </a>
+
+
+</div>  
+
+
+
+
+
+<ion-side-menus>
+  <!-- Left menu -->
+  <ion-side-menu side="left">
+
+      <div ng-include src="'templates/menu.html'"></div>
+
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+
+  <ion-nav-bar class="bar-stable nav-bar-container " nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+   
+    <div class="nav-bar-block " nav-bar="cached">
+
+    <ion-header-bar class="bar-stable bar bar-header" style='background-color: transparent !important;' align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="back-text"></span></button><div class="title title-center header-item"></div></ion-header-bar>
+
+
+    </div>
+
+    <div class="nav-bar-block" nav-bar="active">
+
+      <ion-header-bar class="bar-stable bar bar-header " align-title="center" style='background-color: transparent !important;'><button ng-click="$ionicGoBack()" class="button back-button hide buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="back-text"></span></button>
+
+      <div class="buttons buttons-left">
+
+      <span class="left-buttons">
+
+      <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+
+      </span>
+
+      </div>
+
+      </ion-header-bar>
+
+      </div>
+
+</ion-nav-bar>
+  
+
+      <ion-content padding="true" class="has-header">
+
+                    <form id="fichaDeCliente-form19" class="list" ng-submit='actualizarcliente(cliente)'>
+
+
+      <label class="item item-input" id="fichaDeCliente-input31">
+        <span class="input-label">Nombre Completo</span>
+        <input ng-model='cliente.user__first_name'  type="text">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input32">
+        <span class="input-label">Email</span>
+        <input ng-model='cliente.user__email' placeholder="alacanta@gmail.com" type="text">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input33">
+        <span class="input-label">Telefono</span>
+        <input ng-model='cliente.telefono.numero' placeholder="980729169" type="tel">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input34">
+        <span class="input-label">Direccion</span>
+        <input ng-model='cliente.user__direccion' placeholder="Alameda Peru 125" type="text">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input35">
+        <span class="input-label">Fecha Nacimiento</span>
+        <input ng-model='cliente.fecha_nacimiento' placeholder="" type="date">
+      </label>
+ 
+
+
+      <button id="fichaDeCliente-button120" type="submit" class="button button-stable button-block">Guardar</button>
+    </form>
+
+                        </ion-content>
+
+
+
+
+
+
+  </ion-side-menu-content>
+
+  <!-- Right menu -->
+  <ion-side-menu side="right">
+  </ion-side-menu>
+
+</ion-side-menus>
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  
+.fixed44 {
+
+    bottom: 99px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    right: 0;
+    z-index: 50;
+    margin-left: -54px;
+    width: 108px;
+
+ 
+}
+
+</style>
+
+
+
+</ion-view>

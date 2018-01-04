@@ -178,6 +178,15 @@ angular.module('app.routes', ['ngStorage'])
       }
     })
 
+     .state('detalle', {
+      url: '/detalle',
+      templateUrl: 'templates/detalle.html',
+      controller:'detalleCtrl',
+      params: {
+        producto: null
+      }
+    })
+
 
     // .state('capital.detalle', {
     //   url: '/detalle',
@@ -207,16 +216,57 @@ angular.module('app.routes', ['ngStorage'])
     })
 
          .state('filtros', {
-      url: '/filtros',
+      url: '/filtros/:departamento/:distrito',
       templateUrl: 'templates/filtros.html',
       controller:'homeCtrl'
+
     })
 
-             .state('distrito', {
+        .state('distrito', {
       url: '/distrito',
       templateUrl: 'templates/distrito.html',
       controller:'homeCtrl'
     })
+
+
+        .state('miperfil', {
+      url: '/miperfil',
+      templateUrl: 'templates/miperfil.html',
+      controller:'homeCtrl'
+    })
+
+
+
+        .state('misfavoritos', {
+      url: '/misfavoritos',
+      templateUrl: 'templates/misfavoritos.html',
+      controller:'homeCtrl'
+    })
+
+
+
+        .state('anuncios', {
+      url: '/anuncios',
+      templateUrl: 'templates/anuncios.html',
+      controller:'homeCtrl'
+    })
+
+            .state('categorias', {
+      url: '/categorias',
+      templateUrl: 'templates/categorias.html',
+      controller:'homeCtrl'
+    })
+
+
+              .state('subcategorias', {
+      url: '/subcategorias/:categoria',
+      templateUrl: 'templates/subcategorias.html',
+      controller:'homeCtrl',
+      params: {
+        categoria: null
+      }
+    })
+
 
 
 
@@ -290,7 +340,7 @@ angular.module('app.routes', ['ngStorage'])
     ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/inicio');
+  $urlRouterProvider.otherwise('/home');
 
   host =  "https://estokealo.com/"
 

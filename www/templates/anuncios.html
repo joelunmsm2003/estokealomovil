@@ -1,0 +1,199 @@
+
+
+
+
+<ion-view title="Mis Anuncios" id="page21" style="" hide-nav-bar="false">
+
+  <ion-nav-buttons side="left" style=''>
+   
+     <button class = "button button-icon icon ion-navicon" ng-click = "toggleLeft()"></button>
+
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+        
+
+        <img src="img/filtro.png" alt="" class="src" style="max-width: 36px;
+    height: 25px;
+    margin-top: 5px;" ui-sref="filtros()" ng-click='seleccionafiltro()' >
+        </ion-nav-buttons>
+
+<!--   <ion-nav-bar class="bar-stable">
+     
+     <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons> 
+
+         <ion-nav-buttons side="right">
+        
+
+        <img src="img/filtro.png" alt="" class="src" style="max-width: 36px;
+    height: 25px;
+    margin-top: 5px;" ui-sref="filtros()" >
+        </ion-nav-buttons>
+    </ion-nav-bar> -->
+
+
+ <div class="fixed44" ><a ui-sref="capital.vender()" style='background: #3ec9ac;
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 2px;
+    color: #fff;
+    text-decoration: none;' > <i class="fa fa-camera" aria-hidden="true"></i> Vender</a></div>
+
+ <div ng-include src="'templates/tabs.html'"></div>
+
+
+
+
+<ion-side-menus>
+  <!-- Left menu -->
+  <ion-side-menu side="left">
+
+      <div ng-include src="'templates/menu.html'"></div>
+
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+
+  <ion-nav-bar class="bar-stable nav-bar-container " nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+   
+    <div class="nav-bar-block " nav-bar="cached">
+
+    <ion-header-bar class="bar-stable bar bar-header" style='background-color: transparent !important;' align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="back-text"></span></button><div class="title title-center header-item"></div></ion-header-bar>
+
+
+    </div>
+
+    <div class="nav-bar-block" nav-bar="active">
+
+      <ion-header-bar class="bar-stable bar bar-header " align-title="center" style='background-color: transparent !important;'><button ng-click="$ionicGoBack()" class="button back-button hide buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="back-text"></span></button>
+
+      <div class="buttons buttons-left">
+
+      <span class="left-buttons">
+
+      <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+
+      </span>
+
+      </div>
+
+      </ion-header-bar>
+
+      </div>
+
+</ion-nav-bar>
+  
+
+      <ion-content padding="true" class="has-header">
+
+                      <div class='pins'>
+
+                        <div class='pin' ng-repeat='p in productos' >
+
+                          <img src="{{host}}{{p.photo[0].photo__photo}}" ui-sref="detalle({producto:p})" style="max-width: 100%;
+                                height: auto;">
+
+                        <div style='border-bottom-style: none;
+                          color: #1c3d42;
+                          border: 1px solid #c4cbcc;
+                          border-bottom: : 0px;
+                          margin-top: -5px;
+                          padding: 10px;
+                          border-radius: 3px;'>
+                          <div class='row' >
+                            <div class='col-100'>
+                            {{p.titulo}}
+                            </div>
+
+                          <!--  <div class='col-40' style='text-align: right;
+                                font-size: 15px;'>
+
+
+                            <span ng-if='p.moneda=="Soles"'>S/. </span>
+                            <span ng-if='p.moneda=="Dolares"'>USD </span>
+                            {{p.precio}}
+                            
+                            </div> -->
+                          </div>
+
+
+                          <div class="row">
+
+                                <div class="col-80">
+
+                                <span ng-if='p.moneda=="Soles"'>S/. </span>
+                                <span ng-if='p.moneda=="Dolares"'>USD </span>
+                                {{p.precio}}
+                                </div>
+
+                                <div class="col-20" style='text-align: right;
+                                font-size: 30px; color:#244a50;'>
+
+
+                                <img src="img/heart.png" style='max-width: 23px;' ng-show='heart' ng-click='heart=false'>
+                                <img src="img/heart-o.png" style='max-width: 23px;' ng-hide='heart' ng-click='heart=true' >
+
+                                </div>
+
+
+
+
+                                </div>
+
+                          </div>
+
+
+                        </div>
+
+                      </div>
+
+                        </ion-content>
+
+
+
+
+
+
+  </ion-side-menu-content>
+
+  <!-- Right menu -->
+  <ion-side-menu side="right">
+  </ion-side-menu>
+
+</ion-side-menus>
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  
+.fixed44 {
+
+    bottom: 99px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    right: 0;
+    z-index: 50;
+    margin-left: -54px;
+    width: 108px;
+
+ 
+}
+
+</style>
+
+
+
+</ion-view>

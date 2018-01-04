@@ -1,10 +1,20 @@
 
 $primario: #28f1e0;
-$secundario: #1f395f;
+$secundario: #16a083;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "../www/lib/ionic/scss/ionic";
 
 
+.fixed55 {
+    /* bottom: 99px; */
+    text-align: center;
+    position: fixed;
+    left: 1%;
+    right: 0;
+    z-index: 50;
+    /* margin-left: -54px; */
+    /* width: 100%; */
+}
 
 .container {
   display: flex;
@@ -23,25 +33,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     height: 80px;
     border-radius: 1000px;
     color: $light;  
-    margin: 40px 6px 12px 22px;
+    margin: 1px 6px 12px 22px;
 
 
 }
 
-    .activado{
-
-    	background-color: $stable !important;
-    	color:#fff;
-
-    }
-
-
-.circle:hover {
-  background-color: #fff;
-  border-style: solid;
-  color:$stable;
-
+.activado {
+    background-color: #ffffff !important;
+    color: #3ec9ac !important;
 }
+
 
 .aligner {
   display: flex;
@@ -121,13 +122,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .sider-menu,.inicio {
 	background: red;
 	/* For browsers that do not support gradients */
-	  background: -webkit-linear-gradient(left top, $primario, $secundario);
+	  background: -webkit-linear-gradient(left top, $stable, $primario);
 	/* For Safari 5.1 to 6.0 */
-	  background: -o-linear-gradient(bottom right, $primario, $secundario);
+	  background: -o-linear-gradient(bottom right, $stable, $primario);
 	/* For Opera 11.1 to 12.0 */
-	  background: -moz-linear-gradient(bottom right, $primario, $secundario);
+	  background: -moz-linear-gradient(bottom right, $stable, $primario);
 	/* For Firefox 3.6 to 15 */
-	  background: linear-gradient(to bottom right, $primario, $secundario);
+	  background: linear-gradient(to bottom right, $stable, $primario);
 	/* Standard syntax */}
 .side-menu {
 	background: none;
@@ -404,6 +405,7 @@ tr:hover{
 
 body {
 	color: #fff;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body.platform-ios {
@@ -420,6 +422,10 @@ body.platform-android {
 
 .ionic-body.platform-android {
 	font-family: 'Open Sans', sans-serif;
+}
+
+.list{
+	padding-top: 0px !important;
 }
 
 

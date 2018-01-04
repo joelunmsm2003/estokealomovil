@@ -18,14 +18,25 @@
         <ion-list id="listaDePropuestas-list14">
 
 
-      <ion-item ng-repeat="n in provincias" class="item-icon-right" id="listaDePropuestas-list-item130" ui-sref="distrito()" style="">
+        <ion-radio ng-repeat="n in provincias" ng-model="choice" ng-click='selecciona(n,false)'>{{n.name}}</ion-radio>
+
+
+   <!--    <ion-item ng-repeat="n in provincias" class="item-icon-right" id="listaDePropuestas-list-item130"  style="">
       
         {{n.name}}
 
-        <i class="icon ion-chevron-right stable"></i>
-      </ion-item>
+         <i class="icon ion-ios-checkmark"  style='max-height: 51px;color:rgb(77, 90, 160);' ng-hide='descripcion' ng-click='selecciona(n,false);descripcion=true'></i>
+
+         <i class="icon ion-ios-checkmark-outline"  style='max-height: 51px;color:rgb(77, 90, 160);' ng-show='descripcion' ng-click='selecciona(n,true);descripcion=false'></i>
+
+
+
+      </ion-item> -->
  
     </ion-list>
+
+
+
   </ion-content>
 
  <div ng-include src="'templates/footer.html'"></div>

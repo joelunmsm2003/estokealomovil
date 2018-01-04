@@ -240,15 +240,59 @@ function ($scope, $stateParams) {
 
   console.log('jsjjsjs',$scope.photo)
 
+  $scope.host=host
+
 
 
 
 }])
 
-.controller('homeCtrl', ['$scope', '$stateParams','$http', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('homeCtrl', ['$scope', '$stateParams','$http','$location','$localStorage','$ionicSideMenuDelegate', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams,$http) {
+function ($scope, $stateParams,$http,$location,$localStorage,$ionicSideMenuDelegate) {
+
+
+
+
+  console.log('$stateParams',$stateParams)
+
+
+  if ($localStorage.categoria){
+
+      $http.get(host+"/traesubcategorias/"+$localStorage.categoria).then(function(response) { 
+
+  
+      $scope.subcategorias = response.data 
+
+
+      console.log('subca',$scope.subcategorias)
+
+
+
+
+      });
+
+
+  }
+
+
+
+  $scope.departamento = $stateParams.departamento
+
+  $scope.distrito = $stateParams.distrito
+
+  $scope.host=host
+
+  $scope.heart=true
+
+  $scope.toggleLeft = function() {
+
+    console.log('shhsh')
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+
+  console.log('$localStorage',$localStorage)
 
 
     $scope.detalle=function(data){
@@ -256,12 +300,117 @@ function ($scope, $stateParams,$http) {
     console.log('hhdhd',data)
   }
 
+  $scope.descripcion = true
+
+
+$scope.selecciona =function(data,elige){
+
+
+  console.log('iii',data)
+
+  $scope.departamento = data
+
+  $localStorage.departamento = data
+
+  if(data.name=='Lima'){
+
+    $location.url('distrito')
+
+
+
+  }else{
+
+     $location.url('filtros/'+$scope.departamento.name+'/')
+     $localStorage.distrito  =''
+  }
+
+}
+
+$scope.traetodo=function(){
+
+  $scope.departamento = $localStorage.departamento
+
+  $scope.distrito = $localStorage.distrito
+}
+
+
+$scope.seleccionadistrito =function(data){
+
+
+  console.log(data)
+
+  $localStorage.distrito = data
+
+  $scope.distrito = data
+
+  $scope.departamento = $localStorage.departamento
+
+$location.url('filtros')
+
+$location.url('filtros/'+$scope.departamento.name+'/'+$scope.distrito.nombre)
+ 
+
+}
+
+$scope.seleccionafiltro =function(){
+
+
+
+  $scope.distrito = $localStorage.distrito.nombre
+
+
+  console.log('$scope.distrito',$scope.distrito)
+
+  if(!$scope.distrito){
+
+    console.log('ingressee..')
+
+    $scope.distrito=''
+
+
+  }
+
+  $scope.departamento = $localStorage.departamento
+
+$location.url('filtros')
+
+$location.url('filtros/'+$scope.departamento.name+'/'+$scope.distrito)
+ 
+
+}
+
+$scope.seleccionacategoria=function(data){
+
+
+  console.log('sjjsjsjs',data)
+
+  $localStorage.categoria =data.id
+
+  $location.path('subcategorias/'+data.id)
+
+
+}
+
+
+
+$scope.seleccionasubcategoria=function(data){
+
+
+
+  $location.path('home')
+
+
+
+}
 
 
     $http.get(host+"/provincias").then(function(response) { $scope.provincias = response.data });  
 
     $http.get(host+"/distritos/13").then(function(response) { $scope.distritos = response.data });  
 
+    $http.get(host+"/productosjson").then(function(response) { $scope.productos = response.data }); 
+
+    $http.get(host+"/categorias").then(function(response) { $scope.categorias = response.data }); 
 
 
 }])

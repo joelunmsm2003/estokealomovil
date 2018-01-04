@@ -1,33 +1,103 @@
-<ion-view title="Filtros" id="filtros" style="">
+<ion-view title="Filtros" id="filtros" style="" hide-nav-bar='true'>
 
  <ion-nav-buttons side="right">
 
   </ion-nav-buttons>
 
-    <ion-content style='background: #3ec9ac;'>
+    <ion-content style='background: #3ec9ac;' >
+
+
+<h3 id="miGestion-heading31" style="color: #fff; font-weight: 300; padding:50px; padding-top:25px; padding-bottom:10px;">Filtros</h3>
+
+
       <div class="container">
-        <div class="circle animated pulse" ng-click="cierre=2;seguimiento=1;poliza=2" ng-class="{'activado': seguimiento==1}" ui-sref="departamentos()">
+        <div class="circle"  ui-sref="departamentos()">
           <div class="aligner ">
-            <i class="icon ion-location"></i>
+            <img src="img/vamo.png" style="max-width:40px;">
             
           </div>
           <center>Por Ubicacion</center>
         </div>
-        <div class="circle animated pulse" ng-click="cierre=1;poliza=2;seguimiento=2" ng-class="{'activado': cierre==1}">
+        <div class="circle " ng-click="mayor=false" ng-class="{'activado': mayor==false}">
           <div class="aligner ">
             $+
             
             </div>
-            <center>Menor Precio</center>
+            <center  style='color:#fff !important;'>Menor Precio</center>
         </div>
-        <div class="circle animated pulse" ng-click="poliza=1;cierre=2;seguimiento=2" ng-class="{'activado': poliza==1}">
+        <div class="circle " ng-click="mayor=true" ng-class="{'activado': mayor==true}">
           <div class="aligner ">
             $-
             
           </div>
-          <center>Mayor Precio</center>
+          <center style='color:#fff !important;'>Mayor Precio</center>
         </div>
-      </div>  
+      </div>
+
+
+
+
+<div class="spacer" style="width: 300px; height: 40px;"></div>
+   
+
+      
+
+      <div class="row">
+        
+        <div class="col col-10"></div>
+        <div class="col col-70"> <center><img src="img/vamo.png" style="max-width:40px;"></center>
+
+        <button class='button button-stable button-outline button-block'><span ng-if='departamento'>{{departamento}}</span> <span ng-if='distrito'> {{distrito}}</span></button></div>
+        <div class="col col-10"></div>
+
+
+      </div>
+
+
+
+
+
+  <div class="row">
+        
+        <div class="col col-10"></div>
+        <div class="col col-70"> 
+
+
+               <div class="button-bar">
+        <a class="button button-stable button-outline button-block" ng-click="usado=true" ng-class="{'activado': usado==true}">Nuevo</a>
+        <a class="button button-stable button-outline button-block" ng-click="usado=false" ng-class="{'activado': usado==false}">Usado</a>
+
+        </div>  
+
+        
+
+        </div>
+
+        <div class="col col-10"></div>
+      
+
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col col-10"></div>
+        <div class="col col-70">
+          
+        <button id="seguimiento2-button58"  ui-sref="home()"  class="button button-stable button-block button-outline">Aplicar Filtros</button>
+
+
+
+        </div> 
+
+        <div class="col col-10"></div> 
+        
+      </div>
+
+
+
+
 
   </ion-content>
 </ion-view>
